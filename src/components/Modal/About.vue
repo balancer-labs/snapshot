@@ -9,8 +9,8 @@ defineProps(['open']);
 const emit = defineEmits(['close', 'openLang']);
 
 const gateway = process.env.VUE_APP_IPFS_GATEWAY || gateways[0];
-const commitSha = process.env.VUE_APP_COMMIT_SHA;
-const hubUrl = process.env.VUE_APP_HUB_URL;
+const commitSha = import.meta.env.VITE_APP_COMMIT_SHA;
+const hubUrl = import.meta.env.VITE_APP_HUB_URL;
 
 function changeLang() {
   emit('openLang');

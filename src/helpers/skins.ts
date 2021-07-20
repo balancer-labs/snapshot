@@ -1,11 +1,13 @@
-const requireFile = require.context(
-  '@snapshot-labs/snapshot-spaces/skins/',
-  true,
-  /[\w-]+\.scss$/
+const requireFile = import.meta.glob(
+  '/@snapshot-labs/snapshot-spaces/skins/*.scss'
 );
 
-requireFile.keys().map(file => requireFile(file));
+// console.log(requireFile);
 
-export default requireFile
-  .keys()
-  .map(file => file.replace('./', '').replace('.scss', ''));
+// requireFile.keys().map(file => requireFile(file));
+
+// export default requireFile
+//   .keys()
+//   .map(file => file.replace('./', '').replace('.scss', ''));
+
+export default [];
